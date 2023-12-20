@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Messages - GemMarket{% endblock %}
+
+{% block content %}
+    <h1>Messages</h1>
+
+    {% if messages %}
+        <div class="messages-section">
+            <ul>
+                {% for message in messages %}
+                    <li>
+                        <img src="https://www.healingcrystals.com/images/700_Crystal_Healing__How_to_Cleanse_your_Crystals.jpg" alt="Crystal Image" width="100">
+                        From: {{ message.sender.username }} - {{ message.content }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <p>No messages available.</p>
+    {% endif %}
+{% endblock %}
+

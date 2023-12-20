@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - GemMarket{% endblock %}
+
+{% block content %}
+    <div class="dashboard-section">
+        <img src="https://cdn.britannica.com/85/196285-050-A888D461/Modern-gold-jewelry.jpg" alt="Jewelry Image">
+        <h1>Welcome, {{ user.username }}!</h1>
+        <h2>Your Role: {{ user.role }}</h2>
+        <h3>Your Messages:</h3>
+        <ul>
+            {% for message in user.messages_received %}
+                <li>{{ message.content }} from {{ message.sender.username }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to GemMarket{% endblock %}
+
+{% block content %}
+    <div class="hero-section">
+        <img src="https://www.gia.edu/images/gia-images/Gemstone_Section_Banner-Image_1920x1080px.jpg" alt="Gemstone Image">
+        <h1>Welcome to GemMarket</h1>
+        <p>Explore the world of precious gemstones and minerals.</p>
+        <a href="{{ url_for('register') }}">Register</a>
+        <a href="{{ url_for('login') }}">Login</a>
+    </div>
+{% endblock %}
+

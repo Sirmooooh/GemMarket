@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Listings - GemMarket{% endblock %}
+
+{% block content %}
+    <h1>Listings</h1>
+
+    {% if listings %}
+        <div class="listings-section">
+            <ul>
+                {% for listing in listings %}
+                    <li>
+                        <img src="https://geology.com/minerals/photos/fluorite-green.jpg" alt="Mineral Image" width="100">
+                        {{ listing.title }} - {{ listing.description }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <p>No listings available.</p>
+    {% endif %}
+{% endblock %}
+

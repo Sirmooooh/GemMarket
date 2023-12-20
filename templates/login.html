@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Login - GemMarket{% endblock %}
+
+{% block content %}
+    <div class="login-section">
+        <img src="https://cdn.britannica.com/85/196285-050-A888D461/Modern-gold-jewelry.jpg" alt="Jewelry Image" width="150">
+        <h1>Login to GemMarket</h1>
+        <form method="post" action="{{ url_for('login') }}">
+            <label for="email">Email:</label>
+            <input type="email" name="email" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" required><br>
+
+            <input type="submit" value="Login">
+        </form>
+
+        <p>Don't have an account? <a href="{{ url_for('register') }}">Register here</a></p>
+    </div>
+{% endblock %}
